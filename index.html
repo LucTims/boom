@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoomBook's - Vente</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ✅ Message d'urgence -->
+    <div class="urgent-message">
+        <marquee>🚨 Offre spéciale limitée ! Obtenez votre livre dès maintenant ! 🚀</marquee>
+    </div>
+
+    <!-- ✅ En-tête -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="LIU.png" alt="BoomBook's Logo" class="logo">
+            <span class="site-name">BoomBook's</span>
+        </div>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <!-- ✅ Menu Hamburger -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="https://wa.me/674246355">📱 Rejoindre la communauté BoomBook's sur WhatsApp</a></li>
+            <li><a href="https://t.me/BoomBooks">📢 Rejoindre la communauté BoomBook's sur Telegram</a></li>
+        </ul>
+    </nav>
+
+    <!-- ✅ Section Bienvenue -->
+    <section class="welcome">
+        <h1>Bienvenue sur BoomBook's</h1>
+    </section>
+
+    <!-- ✅ Section Livre -->
+    <section class="book-section">
+        <div class="book-image">
+            <img src="img/GRAPHIC-NOVEL-MOCKUP-02_1656971250361.jpg" alt="Couverture du Livre">
+        </div>
+        <div class="book-description">
+            <h2>📖 Titre du Livre</h2>
+            <p>Découvrez comment transformer votre mindset grâce à ce livre incontournable.</p>
+        </div>
+    </section>
+
+    <!-- ✅ Section Avantages -->
+    <section class="benefits">
+        <h2>🌟 Pourquoi lire ce livre ?</h2>
+        <ul>
+            <li>📚 Améliorez vos connaissances</li>
+            <li>🚀 Boostez votre mindset</li>
+            <li>💡 Obtenez des conseils pratiques</li>
+        </ul>
+    </section>
+
+    <!-- ✅ Section Pour qui ? -->
+    <section class="target-audience">
+        <h2>👤 Ce livre est fait pour vous si :</h2>
+        <p>Vous souhaitez évoluer, apprendre et réussir dans la vie.
+            devenez riche en un rien de temps
+        </p>
+    </section>
+
+    <!-- ✅ Bouton Achat -->
+    <a href="https://lygos.app/pay/{VOTRE_ID_DE_PAIEMENT}" class="buy-btn">📥 Télécharger le livre à sulement 1£ = 655 FCFA</a>
+
+
+
+
+    <!-- ✅ Compteur de visiteurs -->
+    <section class="visitor-counter">
+        <p>👀 <span id="visitorCount"></span> personnes ont déjà téléchargé le livre</p>
+    </section>
+
+    <!-- ✅ Pied de page -->
+    <footer>
+        <p>© 2025 BoomBook's - Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>
+<style>/* ✅ Importation des polices */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, #000428, #004e92);
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+}
+
+/* ✅ Titres */
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ✅ Message d'urgence */
+.urgent-message {
+    background: red;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* ✅ En-tête */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #007BFF;
+    padding: 15px;
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    z-index: 999;
+}
+
+/* ✅ Logo */
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* ✅ Bouton Menu */
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ✅ Menu Hamburger */
+.mobile-menu {
+    position: fixed;
+    right: -25px;
+    top: 80px;
+    width: 200px;
+    background: white;
+    transition: right 0.3s ease;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.mobile-menu ul li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.mobile-menu ul li a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* ✅ Sections */
+.book-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+/* ✅ Image du livre */
+.book-image img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* ✅ Bouton Achat */
+.buy-btn {
+    background: orange;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+    .book-section {
+        flex-direction: column;
+    }
+
+    .book-image img {
+        max-width: 80%;
+    }
+}
+/* ✅ MEDIA QUERIES pour l'adaptabilité */
+@media screen and (max-width: 768px) {
+    .buy-btn {
+        font-size: 16px;
+        padding: 12px 15px;
+        width: 90%; /* Adapter la largeur pour petits écrans */
+        display: block;
+        margin: 0 auto; /* Centrer le bouton */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .buy-btn {
+        font-size: 14px;
+        padding: 10px 12px;
+        width: 100%; /* Prendre toute la largeur sur mobile */
+    }
+}
+</style>
+<script>// ✅ Ouvrir / Fermer le menu
+function toggleMenu() {
+    let menu = document.getElementById("mobileMenu");
+    menu.style.right = menu.style.right === "0px" ? "-250px" : "0px";
+}
+
+// ✅ Fermer le menu si on clique ailleurs
+document.addEventListener("click", function(event) {
+    let menu = document.getElementById("mobileMenu");
+    let button = document.querySelector(".menu-btn");
+
+    if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.style.right = "-250px";
+    }
+});
+
+// ✅ Générer un nombre aléatoire de visiteurs
+document.addEventListener("DOMContentLoaded", function () {
+    let visitorCount = Math.floor(Math.random() * 1000) + 500;
+    document.getElementById("visitorCount").innerText = visitorCount;
+});
+</script>
