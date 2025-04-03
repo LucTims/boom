@@ -3,242 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoomBook's - Vente</title>
+    <title>BoomBook's - Tunnel de Vente</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- ✅ Message d'urgence -->
-    <div class="urgent-message">
-        <marquee>🚨 Offre spéciale limitée ! Obtenez votre livre dès maintenant ! 🚀</marquee>
-    </div>
-
-    <!-- ✅ En-tête -->
-    <header class="header">
-        <div class="logo-container">
-            <img src="LIU.png" alt="BoomBook's Logo" class="logo">
-            <span class="site-name">BoomBook's</span>
-        </div>
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <header>
+        <div class="logo">BoomBook's</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </header>
-
-    <!-- ✅ Menu Hamburger -->
-    <nav class="mobile-menu" id="mobileMenu">
-        <ul>
-            <li><a href="https://wa.me/674246355">📱 Rejoindre la communauté BoomBook's sur WhatsApp</a></li>
-            <li><a href="https://t.me/BoomBooks">📢 Rejoindre la communauté BoomBook's sur Telegram</a></li>
-        </ul>
+    
+    <nav id="menu">
+        <a href="#">Rejoindre le groupe WhatsApp</a>
+        <a href="#">Rejoindre le groupe Telegram</a>
     </nav>
-
-    <!-- ✅ Section Bienvenue -->
-    <section class="welcome">
-        <h1>Bienvenue sur BoomBook's</h1>
-    </section>
-
-    <!-- ✅ Section Livre -->
-    <section class="book-section">
-        <div class="book-image">
-            <img src="img/GRAPHIC-NOVEL-MOCKUP-02_1656971250361.jpg" alt="Couverture du Livre">
+    
+    <div class="banner">🔥 Offre spéciale limitée - 1£ = 655 FCFA ! Achetez maintenant avant la fin de la promo !</div>
+    
+    <section class="presentation">
+        <h1>Bienvenue sur BoomBook's, la révolution de la lecture !</h1>
+        <div class="content">
+            <img src="book_mockup.jpg" alt="Livre PDF">
+            <div class="details">
+                <h2>Titre du Livre</h2>
+                <p><strong>Auteur :</strong> Nom de l’auteur</p>
+                <p><strong>Description :</strong> Brève présentation captivante du livre.</p>
+                <p>⭐ Avis clients : 4.9/5</p>
+            </div>
         </div>
-        <div class="book-description">
-            <h2>📖 Titre du Livre</h2>
-            <p>Découvrez comment transformer votre mindset grâce à ce livre incontournable.</p>
-        </div>
     </section>
-
-    <!-- ✅ Section Avantages -->
-    <section class="benefits">
-        <h2>🌟 Pourquoi lire ce livre ?</h2>
+    
+    <section class="avantages">
+        <h2>Pourquoi acheter ce livre ?</h2>
         <ul>
-            <li>📚 Améliorez vos connaissances</li>
-            <li>🚀 Boostez votre mindset</li>
-            <li>💡 Obtenez des conseils pratiques</li>
+            <li>✅ Améliore votre mindset</li>
+            <li>✅ Techniques secrètes du succès</li>
+            <li>✅ Accessible instantanément après paiement</li>
         </ul>
     </section>
-
-    <!-- ✅ Section Pour qui ? -->
-    <section class="target-audience">
-        <h2>👤 Ce livre est fait pour vous si :</h2>
-        <p>Vous souhaitez évoluer, apprendre et réussir dans la vie.
-            devenez riche en un rien de temps
-        </p>
+    
+    <section class="public-cible">
+        <h2>Pour qui est ce livre ?</h2>
+        <p>Idéal pour entrepreneurs, étudiants et autodidactes.</p>
     </section>
-
-    <!-- ✅ Bouton Achat -->
-    <a href="https://lygos.app/pay/{VOTRE_ID_DE_PAIEMENT}" class="buy-btn">📥 Télécharger le livre à sulement 1£ = 655 FCFA</a>
-
-
-
-
-    <!-- ✅ Compteur de visiteurs -->
-    <section class="visitor-counter">
-        <p>👀 <span id="visitorCount"></span> personnes ont déjà téléchargé le livre</p>
+    
+    <section class="achat">
+        <button onclick="redirectToLygos()">📥 Télécharger le livre à seulement 1£ = 655 FCFA</button>
     </section>
-
-    <!-- ✅ Pied de page -->
+    
+    <div class="compteur-visiteurs">👀 <span id="visiteurs">0</span> personnes ont visité cette page aujourd’hui !</div>
+    
     <footer>
-        <p>© 2025 BoomBook's - Tous droits réservés</p>
+        <p>© 2024 BoomBook’s - Tous droits réservés</p>
+        <a href="#">WhatsApp</a>
+        <a href="#">Telegram</a>
+        <a href="#">Politique de confidentialité</a>
     </footer>
-
 </body>
 </html>
-<style>/* ✅ Importation des polices */
-body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    background: linear-gradient(to bottom, #000428, #004e92);
-    color: white;
-    text-align: center;
-    padding-top: 80px;
-}
-
-/* ✅ Titres */
-h1, h2 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* ✅ Message d'urgence */
-.urgent-message {
-    background: red;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-/* ✅ En-tête */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #007BFF;
-    padding: 15px;
-    position: fixed;
-    top: 40px;
-    width: 100%;
-    z-index: 999;
-}
-
-/* ✅ Logo */
-.logo {
-    height: 40px;
-    margin-right: 10px;
-}
-
-/* ✅ Bouton Menu */
-.menu-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* ✅ Menu Hamburger */
-.mobile-menu {
-    position: fixed;
-    right: -25px;
-    top: 80px;
-    width: 200px;
-    background: white;
-    transition: right 0.3s ease;
-}
-
-.mobile-menu ul {
-    list-style: none;
-    padding: 10px;
-}
-
-.mobile-menu ul li {
-    margin: 10px 0;
-    text-align: center;
-}
-
-.mobile-menu ul li a {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-}
-
-/* ✅ Sections */
-.book-section {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 30px;
-}
-
-/* ✅ Image du livre */
-.book-image img {
-    max-width: 300px;
-    border-radius: 10px;
-}
-
-/* ✅ Bouton Achat */
-.buy-btn {
-    background: orange;
-    padding: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* ✅ Responsive */
-@media (max-width: 768px) {
-    .book-section {
+<style>/* Styles généraux */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #111;
+        color: #fff;
+    }
+    
+    /* En-tête */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        background: linear-gradient(90deg, #007bff, #00c6ff);
+    }
+    
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .menu-toggle {
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    /* Bannière défilante */
+    .announcement {
+        background: red;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    
+    /* Section du produit */
+    .product {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
     }
-
-    .book-image img {
-        max-width: 80%;
+    
+    .product img {
+        width: 200px;
+        margin-bottom: 20px;
     }
-}
-/* ✅ MEDIA QUERIES pour l'adaptabilité */
-@media screen and (max-width: 768px) {
-    .buy-btn {
-        font-size: 16px;
-        padding: 12px 15px;
-        width: 90%; /* Adapter la largeur pour petits écrans */
-        display: block;
-        margin: 0 auto; /* Centrer le bouton */
+    
+    .product-description {
+        max-width: 600px;
+        line-height: 1.5;
     }
-}
-
-@media screen and (max-width: 480px) {
-    .buy-btn {
-        font-size: 14px;
-        padding: 10px 12px;
-        width: 100%; /* Prendre toute la largeur sur mobile */
+    
+    /* Bouton d'achat */
+    .buy-button {
+        display: inline-block;
+        background: #ff9800;
+        color: #fff;
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 20px;
+        transition: 0.3s;
     }
-}
-</style>
-<script>// ✅ Ouvrir / Fermer le menu
-function toggleMenu() {
-    let menu = document.getElementById("mobileMenu");
-    menu.style.right = menu.style.right === "0px" ? "-250px" : "0px";
-}
-
-// ✅ Fermer le menu si on clique ailleurs
-document.addEventListener("click", function(event) {
-    let menu = document.getElementById("mobileMenu");
-    let button = document.querySelector(".menu-btn");
-
-    if (!menu.contains(event.target) && !button.contains(event.target)) {
-        menu.style.right = "-250px";
+    
+    .buy-button:hover {
+        background: #e68900;
     }
-});
-
-// ✅ Générer un nombre aléatoire de visiteurs
-document.addEventListener("DOMContentLoaded", function () {
-    let visitorCount = Math.floor(Math.random() * 1000) + 500;
-    document.getElementById("visitorCount").innerText = visitorCount;
-});
-</script>
+    
+    /* Footer */
+    footer {
+        background: #222;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+    </style>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        // Bannière défilante
+        let banner = document.querySelector(".announcement");
+        let text = banner.innerHTML;
+        banner.innerHTML = `<marquee>${text}</marquee>`;
+    
+        // Compteur de visiteurs (factice)
+        let visitorCount = Math.floor(Math.random() * (5000 - 1500) + 1500);
+        document.getElementById("visitor-count").textContent = visitorCount;
+    
+        // Menu latéral
+        const menuToggle = document.querySelector(".menu-toggle");
+        const sidebar = document.querySelector(".sidebar");
+    
+        menuToggle.addEventListener("click", function () {
+            sidebar.classList.toggle("active");
+        });
+    });
+    </script>
